@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - ODONTOCARE Clínica Dental</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/descarga.png" alt="Logo ODONTOCARE">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="contacto">
+            <div class="container">
+                <h1>Contacto</h1>
+                <p>Completa el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+                
+                <div class="contacto-container">
+                    <form id="formulario-contacto">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servicio">Servicio de interés:</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="limpieza">Limpieza dental</option>
+                                <option value="ortodoncia">Ortodoncia</option>
+                                <option value="blanqueamiento">Blanqueamiento</option>
+                                <option value="implantes">Implantes</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Enviar mensaje</button>
+                    </form>
+                    
+                    <div id="mensaje-confirmacion" style="display: none; text-align: center; padding: 20px; background-color: #e6f7ff; border-radius: 10px; margin-top: 20px;">
+                        <i class="fas fa-check-circle" style="font-size: 4rem; color: #3fbbc0; margin-bottom: 15px;"></i>
+                        <h3>¡Gracias por contactarnos!</h3>
+                        <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>ODONTOCARE</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Dental 123, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+34600000000">600 000 000</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@odontocare.com">info@odontocare.com</a></p>
+                </address>
+            </div>
+            
+            <div class="footer-horario">
+                <h3>Horario de atención</h3>
+                <p>Lunes a Viernes: 9:00 - 20:00</p>
+                <p>Sábados: 10:00 - 14:00</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 ODONTOCARE. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script del formulario directamente en la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const formulario = document.getElementById('formulario-contacto');
+            const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+            
+            formulario.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Validación básica
+                const nombre = document.getElementById('nombre').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const servicio = document.getElementById('servicio').value;
+                const mensaje = document.getElementById('mensaje').value.trim();
+                
+                if (nombre === '' || email === '' || servicio === '' || mensaje === '') {
+                    alert('Por favor, completa todos los campos obligatorios.');
+                    return;
+                }
+                
+                // Ocultar formulario y mostrar confirmación
+                formulario.style.display = 'none';
+                mensajeConfirmacion.style.display = 'block';
+            });
+        });
+    </script>
+    
+    <!-- Script para cambio de tema (segundo script requerido) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Crear botón de cambio de tema
+            const botonTema = document.createElement('button');
+            botonTema.style.position = 'fixed';
+            botonTema.style.bottom = '20px';
+            botonTema.style.right = '20px';
+            botonTema.style.backgroundColor = '#3fbbc0';
+            botonTema.style.color = 'white';
+            botonTema.style.border = 'none';
+            botonTema.style.borderRadius = '50%';
+            botonTema.style.width = '50px';
+            botonTema.style.height = '50px';
+            botonTema.style.fontSize = '1.5rem';
+            botonTema.style.cursor = 'pointer';
+            botonTema.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+            botonTema.style.zIndex = '100';
+            botonTema.innerHTML = '<i class="fas fa-moon"></i>';
+            botonTema.title = 'Cambiar tema';
+            
+            // Añadir botón al body
+            document.body.appendChild(botonTema);
+            
+            // Escuchar evento de clic en el botón
+            botonTema.addEventListener('click', function() {
+                // Cambiar estilos del body
+                if (document.body.style.backgroundColor === 'rgb(51, 51, 51)') {
+                    // Cambiar a tema claro
+                    document.body.style.backgroundColor = '';
+                    document.body.style.color = '';
+                    botonTema.innerHTML = '<i class="fas fa-moon"></i>';
+                    
+                    // Restablecer otros elementos
+                    const headers = document.querySelectorAll('header, footer, .contacto-container');
+                    headers.forEach(el => el.style.backgroundColor = '');
+                    
+                    // Restablecer inputs
+                    const inputs = document.querySelectorAll('input, select, textarea');
+                    inputs.forEach(el => {
+                        el.style.backgroundColor = '';
+                        el.style.color = '';
+                        el.style.borderColor = '';
+                    });
+                } else {
+                    // Cambiar a tema oscuro
+                    document.body.style.backgroundColor = '#333';
+                    document.body.style.color = '#fff';
+                    botonTema.innerHTML = '<i class="fas fa-sun"></i>';
+                    
+                    // Cambiar otros elementos
+                    const headers = document.querySelectorAll('header, footer, .contacto-container');
+                    headers.forEach(el => el.style.backgroundColor = '#444');
+                    
+                    // Cambiar inputs
+                    const inputs = document.querySelectorAll('input, select, textarea');
+                    inputs.forEach(el => {
+                        el.style.backgroundColor = '#555';
+                        el.style.color = '#fff';
+                        el.style.borderColor = '#666';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
