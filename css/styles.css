@@ -4,6 +4,34 @@
     box-sizing: border-box;
 }
 
+
+
+
+/* === Encabezado ODONTOCARE con degradado más visible === */
+.backgroud-color {
+  background-color: #b9e2e3; /* respaldo */
+  background: linear-gradient(to bottom, #e6efef 0%, #bfe3e3 40%, #8fc9cb 100%);
+  /* ↑ Arriba claro (#d9f1f2), medio tu color base (#b9e2e3), abajo más oscuro (#8fc9cb) */
+  
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     line-height: 1.6;
