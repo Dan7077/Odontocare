@@ -73,3 +73,27 @@ document.addEventListener('DOMContentLoaded', function() {
         mensajeConfirmacion.classList.add('mensaje-visible');
     }
 });
+    // Código para menú hamburguesa
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener referencias a elementos del menú hamburguesa
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Verificar que los elementos existan antes de añadir eventos
+    if (menuToggle && navMenu) {
+        // Evento de clic para abrir/cerrar menú
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+});

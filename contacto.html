@@ -6,15 +6,21 @@
     <title>Contacto - ODONTOCARE Clínica Dental</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   
+    <script src="js/form/script.js"></script>
 </head>
 <body>
     <header class="backgroud-color">
         <div class="logo">
             <img src="img/od.png" alt="Logo ODONTOCARE">
         </div>
+       
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         
-        <nav>
+        <nav id="nav-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
@@ -100,97 +106,5 @@
         </div>
     </footer>
 
-    <script>
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const formulario = document.getElementById('formulario-contacto');
-            const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
-            
-            formulario.addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                // Validación 
-                const nombre = document.getElementById('nombre').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const servicio = document.getElementById('servicio').value;
-                const mensaje = document.getElementById('mensaje').value.trim();
-                
-                if (nombre === '' || email === '' || servicio === '' || mensaje === '') {
-                    alert('Por favor, completa todos los campos obligatorios.');
-                    return;
-                }
-                
-                // Ocultar formulario y mostrar confirmación
-                formulario.style.display = 'none';
-                mensajeConfirmacion.style.display = 'block';
-            });
-        });
-    </script>
-    
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            //  botón de cambio de tema
-            const botonTema = document.createElement('button');
-            botonTema.style.position = 'fixed';
-            botonTema.style.bottom = '20px';
-            botonTema.style.right = '20px';
-            botonTema.style.backgroundColor = '#3fbbc0';
-            botonTema.style.color = 'white';
-            botonTema.style.border = 'none';
-            botonTema.style.borderRadius = '50%';
-            botonTema.style.width = '50px';
-            botonTema.style.height = '50px';
-            botonTema.style.fontSize = '1.5rem';
-            botonTema.style.cursor = 'pointer';
-            botonTema.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
-            botonTema.style.zIndex = '100';
-            botonTema.innerHTML = '<i class="fas fa-moon"></i>';
-            botonTema.title = 'Cambiar tema';
-            
-            //  botón  body
-            document.body.appendChild(botonTema);
-            
-            //  clic en el botón
-            botonTema.addEventListener('click', function() {
-                //  estilos del body
-                if (document.body.style.backgroundColor === 'rgb(51, 51, 51)') {
-                    //  tema claro
-                    document.body.style.backgroundColor = '';
-                    document.body.style.color = '';
-                    botonTema.innerHTML = '<i class="fas fa-moon"></i>';
-                    
-                    //  otros elementos
-                    const headers = document.querySelectorAll('header, footer, .contacto-container');
-                    headers.forEach(el => el.style.backgroundColor = '');
-                    
-                    // inputs
-                    const inputs = document.querySelectorAll('input, select, textarea');
-                    inputs.forEach(el => {
-                        el.style.backgroundColor = '';
-                        el.style.color = '';
-                        el.style.borderColor = '';
-                    });
-                } else {
-                    //  tema oscuro
-                    document.body.style.backgroundColor = '#333';
-                    document.body.style.color = '#fff';
-                    botonTema.innerHTML = '<i class="fas fa-sun"></i>';
-                    
-                    //  otros elementos
-                    const headers = document.querySelectorAll('header, footer, .contacto-container');
-                    headers.forEach(el => el.style.backgroundColor = '#444');
-                    
-                    //  inputs
-                    const inputs = document.querySelectorAll('input, select, textarea');
-                    inputs.forEach(el => {
-                        el.style.backgroundColor = '#555';
-                        el.style.color = '#fff';
-                        el.style.borderColor = '#666';
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
