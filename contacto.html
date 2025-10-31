@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,12 @@
     <title>Contacto - ODONTOCARE Clínica Dental</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="img/descarga.png" alt="Logo ODONTOCARE">
+            <img src="img/od.png" alt="Logo ODONTOCARE">
         </div>
         
         <nav>
@@ -100,7 +101,7 @@
     </footer>
 
     <script>
-        // Script del formulario directamente en la página
+        
         document.addEventListener('DOMContentLoaded', function() {
             const formulario = document.getElementById('formulario-contacto');
             const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
@@ -108,7 +109,7 @@
             formulario.addEventListener('submit', function(event) {
                 event.preventDefault();
                 
-                // Validación básica
+                // Validación 
                 const nombre = document.getElementById('nombre').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const servicio = document.getElementById('servicio').value;
@@ -126,10 +127,10 @@
         });
     </script>
     
-    <!-- Script para cambio de tema (segundo script requerido) -->
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Crear botón de cambio de tema
+            //  botón de cambio de tema
             const botonTema = document.createElement('button');
             botonTema.style.position = 'fixed';
             botonTema.style.bottom = '20px';
@@ -147,23 +148,23 @@
             botonTema.innerHTML = '<i class="fas fa-moon"></i>';
             botonTema.title = 'Cambiar tema';
             
-            // Añadir botón al body
+            //  botón  body
             document.body.appendChild(botonTema);
             
-            // Escuchar evento de clic en el botón
+            //  clic en el botón
             botonTema.addEventListener('click', function() {
-                // Cambiar estilos del body
+                //  estilos del body
                 if (document.body.style.backgroundColor === 'rgb(51, 51, 51)') {
-                    // Cambiar a tema claro
+                    //  tema claro
                     document.body.style.backgroundColor = '';
                     document.body.style.color = '';
                     botonTema.innerHTML = '<i class="fas fa-moon"></i>';
                     
-                    // Restablecer otros elementos
+                    //  otros elementos
                     const headers = document.querySelectorAll('header, footer, .contacto-container');
                     headers.forEach(el => el.style.backgroundColor = '');
                     
-                    // Restablecer inputs
+                    // inputs
                     const inputs = document.querySelectorAll('input, select, textarea');
                     inputs.forEach(el => {
                         el.style.backgroundColor = '';
@@ -171,16 +172,16 @@
                         el.style.borderColor = '';
                     });
                 } else {
-                    // Cambiar a tema oscuro
+                    //  tema oscuro
                     document.body.style.backgroundColor = '#333';
                     document.body.style.color = '#fff';
                     botonTema.innerHTML = '<i class="fas fa-sun"></i>';
                     
-                    // Cambiar otros elementos
+                    //  otros elementos
                     const headers = document.querySelectorAll('header, footer, .contacto-container');
                     headers.forEach(el => el.style.backgroundColor = '#444');
                     
-                    // Cambiar inputs
+                    //  inputs
                     const inputs = document.querySelectorAll('input, select, textarea');
                     inputs.forEach(el => {
                         el.style.backgroundColor = '#555';
