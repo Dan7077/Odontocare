@@ -1,17 +1,14 @@
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
-/* === Encabezado ODONTOCARE con degradado más visible === */
+/* === Encabezado ODONTOCARE === */
 .backgroud-color {
   background-color: #b9e2e3; /* respaldo */
   background: linear-gradient(to bottom, #e6efef 0%, #bfe3e3 40%, #8fc9cb 100%);
-  /* ↑ Arriba claro (#d9f1f2), medio tu color base (#b9e2e3), abajo más oscuro (#8fc9cb) */
+  
   
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   padding: 15px 30px;
@@ -349,16 +346,22 @@ footer {
 
 /* Estilos para la página de contacto y formulario */
 #contacto {
-    padding: var(--spacing-xl) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); 
+    padding: 20px;
     background-color: #f9f9f9;
 }
 
 .contacto-container {
-    margin-top: var(--spacing-xl);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     background-color: #fff;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    padding: var(--spacing-xl);
     position: relative;
 }
 
@@ -446,53 +449,6 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: var(--spacing-md);
 }
 
-/* Estilos para el tema oscuro (script adicional) */
-.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-mode header,
-.dark-mode .contacto-container,
-.dark-mode .info-item {
-    background-color: #444;
-}
-
-.dark-mode h1, 
-.dark-mode h2, 
-.dark-mode h3 {
-    color: var(--color-secondary);
-}
-
-.dark-mode input, 
-.dark-mode select, 
-.dark-mode textarea {
-    background-color: #555;
-    color: #fff;
-    border-color: #666;
-}
-
-.tema-switch {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-
-.tema-switch:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
 
 /* Grid view explícito para servicios */
 .servicios-container {
@@ -541,7 +497,7 @@ input:focus, select:focus, textarea:focus {
     min-height: 60vh;
 }
 
-/* Contenedor flex adicional para demostración */
+/* Contenedor flex adicional demostración */
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -592,7 +548,7 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Media queries adicionales para diferentes tamaños */
+/* Media queries adicionales diferentes tamaños */
 @media (max-width: 480px) {
     .galeria-grid {
         grid-template-columns: 1fr;
@@ -813,9 +769,7 @@ h2 {
 
 }
 
-/*
-=============MENU HAMBURGUESA ==============
-*/
+
 /* Estilos para menú hamburguesa */
 .menu-toggle {
     display: none;
