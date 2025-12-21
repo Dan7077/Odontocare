@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formulario.style.display = 'none';
         
         
-        mensajeConfirmacion.classList.add('mensaje-visible');
+        mensajeConfirmacion.style.display ='block';
     }
 });
     // menú hamburguesa
