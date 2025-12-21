@@ -91,3 +91,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+// Botón para mostrar/ocultar footer
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.querySelector('footer');
+    
+    // Crear botón
+    const btnFooter = document.createElement('button');
+    btnFooter.textContent = '👁️ Ocultar Footer';
+    btnFooter.style.cssText = 'position: fixed; bottom: 20px; right: 20px; padding: 12px 24px; background: #3fbbc0; color: white; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;';
+    
+    document.body.appendChild(btnFooter);
+    
+    // Evento click
+    let footerVisible = true;
+    btnFooter.addEventListener('click', function() {
+        if (footerVisible) {
+            footer.style.display = 'none';
+            btnFooter.textContent = '👁️ Mostrar Footer';
+        } else {
+            footer.style.display = 'block';
+            btnFooter.textContent = '👁️ Ocultar Footer';
+        }
+        footerVisible = !footerVisible;
+    });
+});
